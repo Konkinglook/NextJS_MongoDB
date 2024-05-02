@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation';
 
 function CreatePostPage() {
 
-    const [titel,setTitle] = useState("");
+    const [title,setTitle] = useState("");
     const [img,setImg] = useState("");
     const [content,setContent] = useState("");
 
@@ -16,7 +16,7 @@ function CreatePostPage() {
     const handleSubmit = async (e) =>{
         e.preventDefault();
 
-        if (!titel || !img || !content){
+        if (!title || !img || !content){
             alert("Please complete all inputs");
             return;
         }
@@ -27,7 +27,7 @@ function CreatePostPage() {
                 headers:{
                     "content-Type" : "application/json"
                 },
-                body:JSON.stringify({titel,img,content})
+                body:JSON.stringify({title,img,content})
             })
             if(res.ok){
                 router.push("/");
