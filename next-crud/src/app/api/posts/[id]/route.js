@@ -16,3 +16,4 @@ export async function PUT (req , {params}){
     await Post.findByIdAndUpdate(id ,{title, img, content});
     return NextResponse.json({massage:"Post updated"}, {status:200});
 }
+
